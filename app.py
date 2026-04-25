@@ -18,15 +18,16 @@ st.set_page_config(page_title="Math Tutor AI", page_icon="🧮")
 st.title("🧮 AI Math Tutor")
 
 # ---------------- SIDEBAR ----------------
-groq_api_key = st.sidebar.text_input("🔑 Enter Groq API Key", type="password")
-
 level = st.sidebar.selectbox(
     "📊 Choose Difficulty Level",
     ["Beginner (Detailed)", "Intermediate", "Exam Mode (Short)"]
 )
 
+# ---------------- API KEY (SECURE) ----------------
+groq_api_key = st.secrets.get("GROQ_API_KEY", None)
+
 if not groq_api_key:
-    st.info("Please enter Groq API key.")
+    st.error("API key not configured. Please contact admin.")
     st.stop()
 
 # ---------------- LLM ----------------
