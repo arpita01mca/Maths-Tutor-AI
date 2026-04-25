@@ -15,7 +15,7 @@ from moviepy.editor import ImageSequenceClip, AudioFileClip
 
 # ---------------- UI SETUP ----------------
 st.set_page_config(page_title="Math Tutor AI", page_icon="🧮")
-st.title("🧮 AI Math Tutor (Stable Video + Synced Audio)")
+st.title("🧮 AI Math Tutor")
 
 # ---------------- SIDEBAR ----------------
 groq_api_key = st.sidebar.text_input("🔑 Enter Groq API Key", type="password")
